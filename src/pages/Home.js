@@ -26,7 +26,10 @@ export default function Home() {
         fetch(`http://www.omdbapi.com/?apikey=59354c85&s=${search}`)
             .then((res) => res.json())
             .then((data) => {
-                setMovies(data.Search)
+                setMovies(data.Search || []);
+                if (data.Error) {
+                    alert(data.Error)
+                }
             })
     }
 
@@ -43,7 +46,7 @@ export default function Home() {
             <Container>
                 <Form onSubmit={handleSubmit}>
                     <Form.Label>Movies</Form.Label>
-                    <Form.Control onChange={handleChange} type="text" placeholder="Search your favorite movies" value={search} />
+                    <Form.Control onChange={handleChange} type="text" placeholder="Search your favorite movies" value={search} required/>
                     <Button type="submit">Search</Button>
                 </Form>
             </Container>
