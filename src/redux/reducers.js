@@ -1,17 +1,15 @@
 import { ADD_MOVIE, DELETE_MOVIE, SET_LOADING } from "./actions";
 
-const defaultState = {};
+// const defaultState = {};
 
-export function movieReducer(state = defaultState, action) {
+export function movieReducer(state = [], action) {
     switch (action.type) {
         case ADD_MOVIE:
-            return {
-                ...state,
-                [action.movieReducer]: state[action.movieReducer]
-            }
+            return action.payload.moviesArray
+            
         case DELETE_MOVIE:
             return{
-                ...state
+            
             }
         default:
             return state;
