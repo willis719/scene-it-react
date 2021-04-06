@@ -1,5 +1,6 @@
 export const ADD_MOVIE = 'ADD_MOVIE';
 export const DELETE_MOVIE = 'DELETE_MOVIE';
+export const SET_LOADING = "SET_LOADING";
 
 export function createAddMovie() {
     return {
@@ -10,5 +11,11 @@ export function createAddMovie() {
 export function createDeleteMovie() {
     return {
         type: DELETE_MOVIE
+    }
+}
+
+export function loading() {
+    return {
+        type: SET_LOADING
     }
 }
