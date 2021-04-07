@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Movies from './pages/Movies';
+import Watchlist from './pages/Watchlist';
 
 function App() {
   return (
@@ -11,14 +11,14 @@ function App() {
       <div className="App">
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/movies">Movies</Link>
+          <Link to="/watchlist">Watchlist</Link>
         </nav>
         <Switch>
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/movies">
-            <Movies />
+          <Route path="/watchlist">
+            <Watchlist />
           </Route>
         </Switch>
       </div>
