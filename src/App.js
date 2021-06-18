@@ -4,15 +4,17 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Watchlist from './pages/Watchlist';
+import { Navbar } from 'react-bootstrap';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
+        <Navbar bg="light">
+          <Navbar.Brand href='/'>Scene It</Navbar.Brand>
           <Link to="/">Home</Link>
-          <Link to="/watchlist">Watchlist</Link>
-        </nav>
+          <Link style={{marginLeft: '1%'}} to="/watchlist">Watchlist</Link>
+        </Navbar>
         <Switch>
           <Route path="/" exact>
             <Home />

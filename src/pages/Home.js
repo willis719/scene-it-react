@@ -53,22 +53,24 @@ export default function Home() {
                 <Form onSubmit={handleSubmit}>
                     <Form.Label>Movies</Form.Label>
                     <Form.Control onChange={handleChange} type="text" placeholder="Search your favorite movies" value={search} required />
-                    <Button type="submit">Search</Button>
+                    <Button style={{ marginTop: '2%', marginBottom: '4%', width: '25%' }} type="submit">Search</Button>
                 </Form>
             </Container>
             {/* If loading put loading... if not display movies */}
             {loading ? (
                 'Loading...'
             ) : (
-                <Row>
-                    {movies.map((movie) => {
-                        return (
-                            <Col xs='12' sm='6' md='4' lg='3' className="mb-4">
-                                <MovieCard movie={movie} />
-                            </Col>
-                        )
-                    })}
-                </Row>
+                <Container fluid>
+                    <Row>
+                        {movies.map((movie) => {
+                            return (
+                                <Col style={{display: 'flex', justifyContent: 'center'}} xs='12' sm='6' md='4' lg='3' className="mb-4">
+                                    <MovieCard movie={movie} />
+                                </Col>
+                            )
+                        })}
+                    </Row>
+                </Container>
             )}
         </div>
     )
